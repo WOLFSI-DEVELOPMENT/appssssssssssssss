@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>AI Studio</h1>
+        </header>
+        <main class="ai-workspace">
+            <section class="input-section">
+                <h2>Input</h2>
+                <textarea id="aiInput" placeholder="Enter your prompt or data here..."></textarea>
+                <div class="control-buttons">
+                    <button id="generateBtn" class="pill-button">Generate</button>
+                    <button id="analyzeBtn" class="pill-button">Analyze</button>
+                    <button id="clearBtn" class="pill-button">Clear</button>
+                </div>
+            </section>
+            <section class="output-section">
+                <h2>Output</h2>
+                <pre id="aiOutput">Your AI results will appear here.</pre>
+            </section>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* General Styles & Reset */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #FFFFFF; /* Pure white background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top to avoid vertical centering taking too much space */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px; /* Max width for a clean look */
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Header */
+.app-header {
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    color: #000000; /* High contrast with white background */
+}
+
+/* AI Workspace Layout */
+.ai-workspace {
+    display: flex;
+    flex-direction: row; /* Side-by-side sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    padding: 30px;
+}
+
+.input-section, .output-section {
+    flex: 1; /* Distribute space equally */
+    min-width: 300px; /* Minimum width before wrapping */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section h2, .output-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+/* Input Area */
+textarea#aiInput {
+    width: 100%;
+    flex-grow: 1; /* Allow textarea to take available height */
+    min-height: 150px; /* Minimum height for input */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+textarea#aiInput::placeholder {
+    color: #aaa;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-end; /* Align buttons to the right */
+    flex-wrap: wrap;
+}
+
+/* Pill-shaped Buttons */
+.pill-button {
+    background-color: #000000; /* Black button */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 9999px; /* Pill shape */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; /* Prevent text wrapping inside button */
+}
+
+.pill-button:hover {
+    background-color: #333333; /* Slightly lighter black on hover */
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+.pill-button:active {
+    background-color: #555555;
+    transform: translateY(0);
+}
+
+/* Output Area */
+pre#aiOutput {
+    flex-grow: 1; /* Allow pre to take available height */
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    word-break: break-all;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    overflow-y: auto; /* Scroll for long output */
+    min-height: 150px; /* Ensure a minimum height for output */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ai-workspace {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .input-section, .output-section {
+        min-width: unset; /* Remove min-width for stacking */
+        width: 100%;
+    }
+
+    .control-buttons {
+        justify-content: center; /* Center buttons when stacked */
+    }
+}
